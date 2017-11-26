@@ -422,8 +422,8 @@ $('#cancelDelete').click(function(){ //when click cancel
 });
 
 //does this need to be within document.ready???
-$(".glyphicon glyphicon-camera").click(function(){
+$('#couponButton').click(function(){
   console.log("upload coupon clicked");
   tracker = ga.getAll()[0];
-  tracker.send('event', 'glyphicon glyphicon-camera','click'); //is this the right category??
+  tracker.send('event', '#couponButton','click'); //is this the right category??
 })
