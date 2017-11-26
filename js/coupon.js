@@ -217,7 +217,7 @@ function byupload(){
   $("#myTable tr").remove();
 
   //want to append html in reverse order; which one appears last in localStorage
-  //iterate through local storage backwards 
+  //iterate through local storage backwards
   for (i = cl.length-1; i >= 0; i--) {
     var curData = cl[i];
     var curHtml = template(curData);
@@ -233,7 +233,7 @@ function byupload(){
           document.getElementById(cl[i].title).className = str.concat(cl[i].title);
         }
       }
-    } 
+    }
   } //end for loop
 }//end function
 
@@ -279,7 +279,7 @@ function displayTaggedCoupon() {
 
 
   //iterate through table
-  for (i = 0; i < td.length; i++) { 
+  for (i = 0; i < td.length; i++) {
     //don't bother with the ones that aren't visible
     if(td[i].style.display == "none"){
       continue;
@@ -395,7 +395,7 @@ function deleteCoupon(){
   }
   else{
     coupons = JSON.parse(localStorage.getItem('customCoupons'));
-  } 
+  }
   var i = 0;
 
   //take out from localStorage
@@ -420,3 +420,10 @@ $('#cancelDelete').click(function(){ //when click cancel
    var z = document.getElementsByClassName('.checks')
    $('.checks').hide();
 });
+
+//does this need to be within document.ready???
+$(".likeBtn").click(function(){
+  console.log("upload coupon clicked");
+  tracker = ga.getAll()[0];
+  tracker.send('event', 'glyphicon glyphicon-camera','click'); //is this the right category??
+})
